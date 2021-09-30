@@ -1,0 +1,11 @@
+<section class="">
+  {{ range .Paginator.Pages }}
+    <h2 class="">
+      {{- .Title -}}
+    </h2>
+    <time class="" {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+      {{- .Date.Format "January 2, 2006" -}}
+    </time>
+    {{- .Content -}}
+  {{ end }}
+</section>

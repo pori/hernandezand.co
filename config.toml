@@ -1,0 +1,18 @@
+baseURL = "https://hernandezand.co"
+languageCode = "en-us"
+title = "Hernandez & Co."
+theme = "salon"
+
+[menu]
+[[menu.main]]
+  identifier = 'gallery'
+  name = 'Gallery'
+  title = 'Gallery'
+  url = '/'
+  weight = -200
+[[menu.main]]
+  identifier = 'about'
+  name = 'About'
+  title = 'About this site'
+  url = '/about'
+  weight = -110

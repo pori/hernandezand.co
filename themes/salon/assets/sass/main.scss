@@ -1,0 +1,131 @@
+@mixin link-hover {
+  transition: color .3s;
+
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+:root {
+  --primary: #736238;
+  --ceiling: 40px;
+  --canvas-shadow: 1px 8px 10px 3px rgba(0,0,0,0.5);
+  --plaque-shadow: 1px 4px 6px 1px rgba(0,0,0,0.5);
+  --overhead-shadow: 1px 0px 8px 3px rgba(0,0,0,0.5) inset;
+}
+
+html, body { 
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  color: #444;
+  background: #F7F7EB;
+}
+
+.container {
+  display: flex;
+  padding: 0px 40px;
+  // padding-top: 40px;
+  font-family: 'Cormorant Garamond';
+  overflow: auto;
+  height: 100vh;
+
+  box-shadow: var(--overhead-shadow);
+  -webkit-box-shadow: var(--overhead-shadow);
+  -moz-box-shadow: var(--overhead-shadow);
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    @include link-hover;
+  }
+
+  .title-highlight {
+    color: var(--primary);
+  }
+
+  .sidebar {
+    padding-top: var(--ceiling);
+
+    ul {
+      width: 180px; 
+      display: block;
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          font-size: 18px;
+          text-decoration: none;
+          color: black;
+
+          @include link-hover;
+        }
+      }
+    }
+  }
+
+  .page {
+    width: 600px;
+    padding-top: var(--ceiling);
+    margin-left: 100px;
+  }
+
+  .collection {
+    display: flex;
+    padding-top: var(--ceiling);
+    margin-right: 100px;
+
+    article {
+      margin-left: 100px;
+    }
+  }
+
+  .piece {
+    display: flex;
+
+    & > div {
+      margin-left: 40px;
+    }
+
+    .canvas {
+      img {
+        // border: 10px solid goldenrod;
+        max-height: 90vh;
+
+        -webkit-box-shadow: var(--canvas-shadow); 
+        box-shadow: var(--canvas-shadow);
+      }
+    }
+
+    .plaque {
+      width: 400px;
+      padding: 10px 30px;
+      background: white;
+
+      -webkit-box-shadow: var(--plaque-shadow); 
+      box-shadow: var(--plaque-shadow);
+
+      h2 {
+        font-style: italic;
+        margin-bottom: 0;
+      }
+
+      h3 {
+        font-weight: normal;
+        font-size: 18px;
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}

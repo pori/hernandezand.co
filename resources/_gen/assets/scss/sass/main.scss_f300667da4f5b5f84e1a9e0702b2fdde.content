@@ -1,0 +1,82 @@
+:root {
+  --primary: #736238;
+  --ceiling: 40px;
+  --canvas-shadow: 1px 8px 10px 3px rgba(0,0,0,0.5);
+  --plaque-shadow: 1px 4px 6px 1px rgba(0,0,0,0.5);
+  --overhead-shadow: 1px 0px 8px 3px rgba(0,0,0,0.5) inset; }
+
+html, body {
+  width: 100%;
+  height: 100vh; }
+
+body {
+  margin: 0;
+  color: #444;
+  background: #F7F7EB; }
+
+.container {
+  display: flex;
+  padding: 0px 40px;
+  font-family: 'Cormorant Garamond';
+  overflow: auto;
+  height: 100vh;
+  box-shadow: var(--overhead-shadow);
+  -webkit-box-shadow: var(--overhead-shadow);
+  -moz-box-shadow: var(--overhead-shadow); }
+  .container a {
+    text-decoration: none;
+    color: inherit;
+    transition: color .3s; }
+    .container a:hover {
+      color: var(--primary); }
+  .container .title-highlight {
+    color: var(--primary); }
+  .container .sidebar {
+    padding-top: var(--ceiling); }
+    .container .sidebar ul {
+      width: 180px;
+      display: block;
+      list-style-type: none;
+      padding: 0; }
+      .container .sidebar ul li {
+        margin-bottom: 10px; }
+        .container .sidebar ul li a {
+          font-size: 18px;
+          text-decoration: none;
+          color: black;
+          transition: color .3s; }
+          .container .sidebar ul li a:hover {
+            color: var(--primary); }
+  .container .page {
+    width: 600px;
+    padding-top: var(--ceiling);
+    margin-left: 100px; }
+  .container .collection {
+    display: flex;
+    padding-top: var(--ceiling);
+    margin-right: 100px; }
+    .container .collection article {
+      margin-left: 100px; }
+  .container .piece {
+    display: flex; }
+    .container .piece > div {
+      margin-left: 40px; }
+    .container .piece .canvas img {
+      max-height: 90vh;
+      -webkit-box-shadow: var(--canvas-shadow);
+      box-shadow: var(--canvas-shadow); }
+    .container .piece .plaque {
+      width: 400px;
+      padding: 10px 30px;
+      background: white;
+      -webkit-box-shadow: var(--plaque-shadow);
+      box-shadow: var(--plaque-shadow); }
+      .container .piece .plaque h2 {
+        font-style: italic;
+        margin-bottom: 0; }
+      .container .piece .plaque h3 {
+        font-weight: normal;
+        font-size: 18px;
+        margin-top: 0; }
+      .container .piece .plaque p {
+        font-size: 18px; }
