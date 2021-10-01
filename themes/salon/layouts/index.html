@@ -6,7 +6,7 @@
             <div class="canvas">
               <img src="{{ .Params.image }}" alt="{{ .Title }}" />
             </div>
-            <div>
+            <div class="adhesive">
               <div class="plaque">
                 <h2>
                   <a href="{{ .Permalink }}">
@@ -26,6 +26,7 @@
           </article>
         {{ end }}
       </section>
+      <div class="corner"></div>
     {{ end }}
   {{- template "_internal/pagination.html" . -}}
 {{ end }}

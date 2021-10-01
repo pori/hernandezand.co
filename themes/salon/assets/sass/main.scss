@@ -27,8 +27,8 @@ body {
 
 .container {
   display: flex;
-  padding: 0px 40px;
-  // padding-top: 40px;
+  padding: 0px;
+  padding-left: 40px;
   font-family: 'Cormorant Garamond';
   overflow: auto;
   height: 100vh;
@@ -36,6 +36,21 @@ body {
   box-shadow: var(--overhead-shadow);
   -webkit-box-shadow: var(--overhead-shadow);
   -moz-box-shadow: var(--overhead-shadow);
+
+  h2 {
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 18px;
+  }
 
   a {
     text-decoration: none;
@@ -49,13 +64,20 @@ body {
   }
 
   .sidebar {
-    padding-top: var(--ceiling);
+    padding-top: 60px;
+    padding-right: 40px;
+
+    h1 {
+      transform: skew(360deg, -25deg);
+    }
 
     ul {
       width: 180px; 
       display: block;
       list-style-type: none;
       padding: 0;
+      transform: skew(360deg, -25deg);
+
 
       li {
         margin-bottom: 10px;
@@ -74,17 +96,32 @@ body {
   .page {
     width: 600px;
     padding-top: var(--ceiling);
+    padding-bottom: var(--ceiling);
     margin-left: 100px;
   }
 
   .collection {
+    --border: 1px solid rgba(0,0,0,.5);
+
     display: flex;
     padding-top: var(--ceiling);
-    margin-right: 100px;
+    padding-right: 100px;
+    padding-bottom: 40px;
+    border-bottom: var(--border);
+    border-left: var(--border);
 
     article {
       margin-left: 100px;
     }
+  }
+
+  .corner {
+    transform: rotate(145deg);
+    transform-origin: left;
+    overflow: hidden;
+    width: 180px;
+    height: 1px;
+    background: rgba(0,0,0,.5);
   }
 
   .piece {
@@ -97,11 +134,16 @@ body {
     .canvas {
       img {
         // border: 10px solid goldenrod;
-        max-height: 90vh;
+        max-height: 75vh;
 
         -webkit-box-shadow: var(--canvas-shadow); 
         box-shadow: var(--canvas-shadow);
       }
+    }
+
+    .adhesive {
+      display: flex;
+      align-items: end;
     }
 
     .plaque {
@@ -111,21 +153,6 @@ body {
 
       -webkit-box-shadow: var(--plaque-shadow); 
       box-shadow: var(--plaque-shadow);
-
-      h2 {
-        font-style: italic;
-        margin-bottom: 0;
-      }
-
-      h3 {
-        font-weight: normal;
-        font-size: 18px;
-        margin-top: 0;
-      }
-
-      p {
-        font-size: 18px;
-      }
     }
   }
 }
